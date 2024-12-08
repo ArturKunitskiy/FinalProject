@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./script.js">
+    <title>MySite</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#movies">My Favourite Movies</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+    </header>
+
+    <section id="about" class="section about">
+        <img src="./img/image 2.png" alt="Code">
+        <div>
+            <h1>About Me</h1>
+            <p>My name is Kuntyskyi Artur and I am a future Developer. I am a second-year IT college student. During my time at college, I have gained hands-on experience in creating software solutions that address real-world challenges and continue to learn and improve.
+            I actively participate in educational projects, create my own projects, and am always open to new challenges and collaboration opportunities. My goal is to become a specialist who not only possesses technical skills but also understands users' needs.<br>
+            <strong>My skills:</strong> C++, Python, HTML, CSS, Illustrator, Photoshop.</p>
+        </div>
+    </section>
+
+    <section id="movies" class="section movies">
+        <h1>My Favourite Movies</h1>
+        <div class="slider">
+            <button class="arrow arrow-left" onclick="moveSlide(-1)">&#8249;</button>
+            <div class="slides">
+                <img src="./img/hobbit_1.jpg" alt="hobbit_1">
+                <img src="./img/hobbit_2.jpg" alt="hobbit_2">
+                <img src="./img/hobbit_3.jpeg" alt="hobbit_3">
+                <img src="./img/LOTR_1.jpeg" alt="LOTR_1">
+                <img src="./img/LOTR_2.jpeg" alt="LOTR_2">
+                <img src="./img/LOTR_3.jpeg" alt="LOTR_3">
+            </div>
+            <button class="arrow arrow-right" onclick="moveSlide(1)">&#8250;</button>
+        </div>
+        <p>The Lord of the Rings and The Hobbit are favorites because they offer more than just an adventure – they're timeless stories of courage, friendship, and resilience. Frodo and Bilbo, as unlikely heroes, remind us that even the smallest person can make a difference, inspiring anyone facing daunting challenges.
+        The breathtaking visuals and immersive storytelling transport viewers to Middle-earth, providing a perfect escape and a chance to explore themes of loyalty and hope. These films resonate deeply, offering not only stunning visuals but also lessons in bravery and perseverance that linger long after the credits roll.</p>
+    </section>
+
+    <section id="contact" class="section">
+        <h1>Contact Me</h1>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Name*" required>
+            <input type="email" name="email" placeholder="E-mail*" required>
+            <input type="tel" name="phone" placeholder="Phone number">
+            <textarea name="message" rows="5" placeholder="Message*" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        Kuntyskyi Artur. KHK-21
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    </script>
+</body>
+</html>
